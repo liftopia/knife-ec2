@@ -323,6 +323,7 @@ class Chef
         msg_pair("Environment", config[:environment] || '_default')
         msg_pair("Run List", (config[:run_list] || []).join(', '))
         msg_pair("JSON Attributes",config[:json_attributes]) unless !config[:json_attributes] || config[:json_attributes].empty?
+        return @server
       end
 
       def bootstrap_for_node(server,ssh_host)
